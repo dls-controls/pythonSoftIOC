@@ -53,12 +53,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-13]
         python: [cp37, cp38, cp39, cp310]
 
         include:
           # Put coverage and results files in the project directory for mac
-          - os: macos-latest
+          - os: macos-13
             cov_file: "{project}/dist/coverage.xml"
             results_file: "{project}/dist/pytest-results.xml"
           # And for windows
@@ -146,7 +146,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-13]
         python: [cp37, cp38, cp39, cp310]
 
     runs-on: ${{ matrix.os }}
