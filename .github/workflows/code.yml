@@ -124,22 +124,6 @@ jobs:
           name: Unit Test Results (${{ matrix.os }}-${{ matrix.python }})
           path: dist/pytest-results.xml
 
-  publish-test-results:
-    name: Publish Unit Tests Results
-    needs: build
-    runs-on: ubuntu-latest
-    if: always()
-
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          path: artifacts
-
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        with:
-          files: artifacts/**/*.xml
 
   test-sdist:
     needs: [sdist]
