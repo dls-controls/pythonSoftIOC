@@ -106,7 +106,8 @@ setup(
         epicscorelibs.version.abi_requires(),
         "pvxslibs>=1.2.2",
         "numpy",
-        "epicsdbbuilder>=1.4"
+        "epicsdbbuilder>=1.4",
+        "pyyaml>=6.0"
     ],
     zip_safe = False,  # setuptools_dso is not compatible with eggs!
 )
